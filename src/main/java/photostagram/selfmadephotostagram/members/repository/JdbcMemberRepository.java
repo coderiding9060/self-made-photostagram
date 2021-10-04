@@ -31,8 +31,8 @@ public class JdbcMemberRepository implements MemberRepository {
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1,id);
             rs = pstmt.executeQuery();
-            member = new Member();
             if(rs.next()){
+                member = new Member();
                 member.setNo(rs.getLong("no"));
                 member.setId(rs.getString("id"));
                 member.setPw(rs.getString("pw"));
@@ -61,8 +61,8 @@ public class JdbcMemberRepository implements MemberRepository {
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1,email);
             rs = pstmt.executeQuery();
-            member = new Member();
             if(rs.next()){
+                member = new Member();
                 member.setNo(rs.getLong("no"));
                 member.setId(rs.getString("id"));
                 member.setPw(rs.getString("pw"));
@@ -92,8 +92,8 @@ public class JdbcMemberRepository implements MemberRepository {
             pstmt.setString(1,id);
             pstmt.setString(2,pw);
             rs = pstmt.executeQuery();
-            member = new Member();
             if(rs.next()){
+                member = new Member();
                 member.setNo(rs.getLong("no"));
                 member.setId(rs.getString("id"));
                 member.setPw(rs.getString("pw"));
@@ -122,9 +122,9 @@ public class JdbcMemberRepository implements MemberRepository {
             conn = getConnection();
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
-            member = new Member();
             memberList = new ArrayList<>();
             while(rs.next()){
+                member = new Member();
                 member.setNo(rs.getLong("no"));
                 member.setId(rs.getString("id"));
                 member.setPw(rs.getString("pw"));
