@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import photostagram.selfmadephotostagram.members.repository.JdbcMemberRepository;
 import photostagram.selfmadephotostagram.members.repository.MemberRepository;
+import photostagram.selfmadephotostagram.members.service.MemberService;
+import photostagram.selfmadephotostagram.members.service.MemberServiceImpl;
 
 import javax.sql.DataSource;
 
@@ -19,5 +21,10 @@ public class MemberConfig {
     @Bean
     MemberRepository memberRepository(){
         return new JdbcMemberRepository(dataSource);
+    }
+
+    @Bean
+    MemberService memberService(){
+        return new MemberServiceImpl(memberRepository());
     }
 }

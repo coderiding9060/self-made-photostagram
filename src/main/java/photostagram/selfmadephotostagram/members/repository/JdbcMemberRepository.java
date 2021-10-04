@@ -1,5 +1,6 @@
 package photostagram.selfmadephotostagram.members.repository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import photostagram.selfmadephotostagram.members.domain.Member;
 
@@ -13,6 +14,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
     private DataSource dataSource;
 
+    @Autowired
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
     }
