@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html
+        lagn="ko"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorator="layouts/layout"
+>
+<!-- 공통으로 쓰이는 css파일을넣는다.-->
+
+<!-- 컨텐츠페이지의 CSS 영역이 들어감 -->
+<th:block layout:fragment="css"></th:block>
+
+<!-- 공통으로 쓰이는 .js파일을넣는다.-->
+
+<!-- 컨텐츠페이지의 스크립트 영역이 들어감 -->
+<th:block layout:fragment="script"></th:block>
+<div layout:fragment="content">
+    index.html 메인 페이지입니다.
+   <!-- <p th:text="${member.no}"></p>
+    <p th:text="${member.id}"></p>
+    <p th:text="${member.pw}"></p>
+    <p th:text="${member.name}"></p>
+    <p th:text="${member.email}"></p>
+    <p th:text="${member.gender}"></p>-->
+</div>
+</html>
