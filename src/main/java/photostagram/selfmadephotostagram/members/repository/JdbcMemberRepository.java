@@ -156,10 +156,11 @@ public class JdbcMemberRepository implements MemberRepository {
             pstmt.setString(3, member.getName());
             pstmt.setString(4, member.getEmail());
             pstmt.setString(5, member.getGender());
+            pstmt.executeUpdate();
             rs = pstmt.getGeneratedKeys();
             if(rs.next()){
-                member.setNo(rs.getLong("no"));
-            } else {
+                member.setNo(rs.getLong(1));
+            }else {
                 throw new IllegalStateException("아이디 생성 실패");
             }
         } catch (SQLException throwables) {
